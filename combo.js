@@ -27,13 +27,13 @@ console.log(oppositeNum(4));
 // A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.
 // Console true if the given string is a palindrome. Otherwise, console false.
 
-const removeSpaces = (arr) => {
+const removeSpaces = (arr) => {      // Iterates through an array and removes "empty" strings (aka spaces)
     for (i in arr) {
         if (arr[i] === " ") {
             arr.splice(i,1);
         };
     };
-      return arr;
+    return arr;
 }
 
 console.log(removeSpaces([" ", "a", " ", "s", " ", "s"]));
