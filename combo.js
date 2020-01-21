@@ -29,19 +29,20 @@ console.log(oppositeNum(4));
 
 const removeSpaces = (arr) => {      // Iterates through an array and removes "empty" strings (aka spaces)
     for (i in arr) {
-        if (arr[i] === " ") {
+        if (arr[i] === " " || arr[i] === "") {
             arr.splice(i,1);
         };
     };
     return arr;
 }
 
-console.log(removeSpaces([" ", "a", " ", "s", " ", "s"]));
+console.log(removeSpaces([" ", "a", "", "s", " ", "s"]));
 
 
 const palindromeCheck = (str) => {
     const lowerStr = str.toLowerCase(); // Convert input to lowercase
-    const strArr = lowerStr.split(''); // Convert input string to array
+    const removePunc = lowerStr.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+    const strArr = removePunc.split(''); // Convert input string to array
     const noSpacesArr = removeSpaces(strArr); // Remove empty spaces from array
     const noSpaces = noSpacesArr.join(''); // Convert the first, unreversed array back to a string for comparison
     const revArr = noSpacesArr.reverse(); // Reverse the space-less array
@@ -53,7 +54,7 @@ const palindromeCheck = (str) => {
     }
 }
 
-console.log(palindromeCheck('Mr Owl ate my metal worm'));
+console.log(palindromeCheck('Mr. Owl ate! my{} metal worm'));
 
 // Challenge #4
 // Lawrence the wide mouth frog is particularly interested in the eating habits of other creatures.
