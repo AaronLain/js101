@@ -27,7 +27,7 @@ console.log(oppositeNum(4));
 // A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.
 // Console true if the given string is a palindrome. Otherwise, console false.
 
-const removeSpaces = (arr) => {      // Iterates through an array and removes "empty" strings (aka spaces)
+const removeSpaces = (arr) => {      // Iterates through an array and removes spaces or empty strings
     for (i in arr) {
         if (arr[i] === " " || arr[i] === "") {
             arr.splice(i,1);
@@ -41,7 +41,7 @@ console.log(removeSpaces([" ", "a", "", "s", " ", "s"]));
 
 const palindromeCheck = (str) => {
     const lowerStr = str.toLowerCase(); // Convert input to lowercase
-    const removePunc = lowerStr.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+    const removePunc = lowerStr.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,""); // Replace all punctuation with empty string
     const strArr = removePunc.split(''); // Convert input string to array
     const noSpacesArr = removeSpaces(strArr); // Remove empty spaces from array
     const noSpaces = noSpacesArr.join(''); // Convert the first, unreversed array back to a string for comparison
@@ -54,7 +54,7 @@ const palindromeCheck = (str) => {
     }
 }
 
-console.log(palindromeCheck('Mr. Owl ate! my{} metal worm'));
+console.log(palindromeCheck('Mr. Owl ate! my{} metal. worm'));
 
 // Challenge #4
 // Lawrence the wide mouth frog is particularly interested in the eating habits of other creatures.
