@@ -39,16 +39,14 @@ console.log(employee.isCool);
 console.log(employee.firstName);
 console.log(employee.lastName);
 
-const statusMaker = (employee) => {
-    if (employee.firstName[0] == 'M') {
-        employee.status = 'vip';
-        return employee;
+const statusMaker = (emp) => {
+    if (emp.firstName[0] === 'M') {
+        emp.status = 'vip';
     } else {
-        employee.status = 'peasant';
-        return employee;
+        emp.status = 'peasant';
     }
+    return emp;
 };
 
-statusMaker(employee);
-console.log(employee.status);
+console.log(statusMaker(employee));
 
