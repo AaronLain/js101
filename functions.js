@@ -20,11 +20,11 @@ const fortyTwo = (number) => {
     return `Your new number is ${addedNumber}`;
 }
 
-console.log(fortyTwo(15));
+console.log(fortyTwo(4));
 
 const oldAge = (year) => {
     const superOld = 2099 - year;
     return `You will be ${superOld} in 2099`;
 }
 
-console.log(oldAge(1965));
+console.log(oldAge(1954));
