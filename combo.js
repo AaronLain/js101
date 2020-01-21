@@ -33,7 +33,7 @@ const removeSpaces = (arr) => {
             arr.splice(i,1);
         };
     };
-    return arr;
+      return arr;
 }
 
 console.log(removeSpaces([" ", "a", " ", "s", " ", "s"]));
@@ -45,8 +45,8 @@ const palindromeCheck = (str) => {
     const noSpacesArr = removeSpaces(strArr); // Remove empty spaces from array
     const noSpaces = noSpacesArr.join(''); // Convert the first, unreversed array back to a string for comparison
     const revArr = noSpacesArr.reverse(); // Reverse the space-less array
-    const joinArr = revArr.join(''); // Convert the reversed array into a string
-    if (noSpaces === joinArr) {     // Compare the reversed and unreversed strings
+    const joinRevArr = revArr.join(''); // Convert the reversed array into a string
+    if (noSpaces === joinRevArr) {     // Compare the reversed and unreversed strings
         return true;
     } else {
         return false;
