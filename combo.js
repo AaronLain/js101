@@ -28,7 +28,7 @@ console.log(oppositeNum(4));
 // Console true if the given string is a palindrome. Otherwise, console false.
 
 const removeSpaces = (arr) => {
-    for (let i = 0; i < arr.length; i++) {
+    for (i in arr) {
         if (arr[i] === " ") {
             arr.splice(i,1);
         };
@@ -40,13 +40,13 @@ console.log(removeSpaces([" ", "a", " ", "s", " ", "s"]));
 
 
 const palindromeCheck = (str) => {
-    let lowerStr = str.toLowerCase(); // Convert input to lowercase
-    let strArr = lowerStr.split(''); // Convert input string to array
-    let noSpacesArr = removeSpaces(strArr); // Remove empty spaces from array
-    let noSpaces = noSpacesArr.join(''); // Convert the first, unreversed array back to a string for comparison
-    let revArr = noSpacesArr.reverse(); // Reverse the space-less array
-    let joinArr = revArr.join(''); // Convert the reversed array into a string
-    if (noSpaces == joinArr) {     // Compare the reversed and unreversed strings
+    const lowerStr = str.toLowerCase(); // Convert input to lowercase
+    const strArr = lowerStr.split(''); // Convert input string to array
+    const noSpacesArr = removeSpaces(strArr); // Remove empty spaces from array
+    const noSpaces = noSpacesArr.join(''); // Convert the first, unreversed array back to a string for comparison
+    const revArr = noSpacesArr.reverse(); // Reverse the space-less array
+    const joinArr = revArr.join(''); // Convert the reversed array into a string
+    if (noSpaces === joinArr) {     // Compare the reversed and unreversed strings
         return true;
     } else {
         return false;
@@ -60,3 +60,14 @@ console.log(palindromeCheck('Mr Owl ate my metal worm'));
 // He just can't stop asking the creatures he encounters what they like to eat. But then he meet the alligator who just LOVES to eat the lips of wide-mouthed frogs!
 // Given a string with the animal name, that Lawrence encounters, output small if the animal is an alligator (case insensitive) otherwise return wide.
 
+const isWide = (animal) => {
+    const lowerCaseAnimal = animal.toLowerCase();
+    console.log(lowerCaseAnimal);
+    if (lowerCaseAnimal === "alligator") {
+        console.log("Small!");
+    } else {
+        console.log("Wide!");
+    };
+}
+
+console.log(isWide("tarantula"));
